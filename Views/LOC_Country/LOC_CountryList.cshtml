@@ -62,8 +62,8 @@
                                 <tr >
                                     <td scope="row">@dr["CountryID"]</td>
                                     <td scope="col">@dr["CountryName"]</td>
-                                    <td scope="col"><a asp-controller="LOC_State" asp-action="SelectAll">@dr["StateCount"]</a></td>
-                                    <td scope="col"><a asp-controller="LOC_City" asp-action="SelectAll">@dr["CityCount"]</a></td>
+                                    <td scope="col"><a asp-controller="LOC_State" asp-action="SelectAll" asp-route-CountryID="@(Convert.ToInt32(dr["CountryID"]))">@dr["StateCount"]</a></td>
+                                    <td scope="col"><a asp-controller="LOC_City" asp-action="SelectAll" asp-route-CountryID="@(Convert.ToInt32(dr["CountryID"]))">@dr["CityCount"]</a></td>
                                     <td scope="col">@Convert.ToDateTime(@dr["Created"]).ToString("dd-MM-yyyy")</td>
                                     <td scope="col">@Convert.ToDateTime(@dr["Modified"]).ToString("dd-MM-yyyy")</td>
                                     <td scope="col">
