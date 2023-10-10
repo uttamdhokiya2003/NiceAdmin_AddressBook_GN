@@ -1,0 +1,81 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AddEditDemo
+build_property.RootNamespace = AddEditDemo
+build_property.ProjectDir = C:\Users\Admin\Source\Repos\uttamdhokiya2003\NiceAdmin_AddressBook_GN\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Admin\Source\Repos\uttamdhokiya2003\NiceAdmin_AddressBook_GN
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/EMP_Department/EMP_DepartmentAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRU1QX0RlcGFydG1lbnRcRU1QX0RlcGFydG1lbnRBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/EMP_Department/EMP_DepartmentList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRU1QX0RlcGFydG1lbnRcRU1QX0RlcGFydG1lbnRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/EMP_Employee/EMP_EmployeeAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRU1QX0VtcGxveWVlXEVNUF9FbXBsb3llZUFkZEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/EMP_Employee/EMP_EmployeeList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRU1QX0VtcGxveWVlXEVNUF9FbXBsb3llZUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/EMP_Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRU1QX0VtcGxveWVlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/LOC_City/LOC_CityAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTE9DX0NpdHlcTE9DX0NpdHlBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/LOC_City/LOC_CityList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTE9DX0NpdHlcTE9DX0NpdHlMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/LOC_Country/LOC_CountryAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTE9DX0NvdW50cnlcTE9DX0NvdW50cnlBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/LOC_Country/LOC_CountryList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTE9DX0NvdW50cnlcTE9DX0NvdW50cnlMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/LOC_State/LOC_StateAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTE9DX1N0YXRlXExPQ19TdGF0ZUFkZEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/LOC_State/LOC_StateList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTE9DX1N0YXRlXExPQ19TdGF0ZUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Source/Repos/uttamdhokiya2003/NiceAdmin_AddressBook_GN/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
