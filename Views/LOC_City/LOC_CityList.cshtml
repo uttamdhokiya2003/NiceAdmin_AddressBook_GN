@@ -33,7 +33,7 @@
                             <form method="post">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <select class="form-control" name="CountryID" asp-items="@(new SelectList(ViewBag.CountryList,"CountryID","CountryName"))">
+                                        <select class="form-control" name="CountryID" asp-items="@(new SelectList(ViewBag.CountryList,"CountryID","CountryName"))" onchange="functionOnStateChange();">
                                             <option value="">Select Country</option>
                                         </select>
 
@@ -140,6 +140,38 @@
             else {
                 return false;
             }
+        }
+    </script>
+    <script>
+        function functionOnStateChange() {
+            var CountryID = $("#CountryID").val();
+
+            if (CountryID !== "") {
+                $("#StateID").empty();
+                $("#StateID").append($("<option></option>").val("").html("Select State"));
+                $.ajax(
+                    {
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "@Url.Action("DropDownByCountry","LOC_City")" + "?&CountryID=" + CountryID,
+                        data: {},
+                        dataType: "json",
+                        success: function (Result) {
+                            $.each(Result, function (key, value) {
+                                $("#StateID").append($("<option></option>").val(value.stateID).html(value.stateName));
+                            });
+                        },
+                        error: function (err) {
+                            alert("Error While Running AJAX");
+                        }
+                    }
+                )
+            }
+            else {
+                $("#StateID").empty();
+                $("#StateID").append($("<option></option>").val("").html("Select State"));
+            }
+
         }
     </script>
     <script src="~/js/datatablejs.js"></script>
