@@ -13,6 +13,7 @@ namespace AddEditDemo.Controllers
         public IActionResult SelectAll() 
         {
             DataTable dt=dalLOC.dbo_PR_LOC_Country_SelectAll();
+            List<LOC_CountryModel> 
             return View("LOC_CountryList",dt);
         }
         #endregion
