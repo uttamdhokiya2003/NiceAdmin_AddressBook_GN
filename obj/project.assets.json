@@ -10210,19 +10210,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\mayur\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\AddEditDemo\\AddEditDemo.csproj",
+      "projectUniqueName": "C:\\Users\\mayur\\Source\\Repos\\NiceAdmin_AddressBook_GN\\AddEditDemo.csproj",
       "projectName": "AddEditDemo",
-      "projectPath": "C:\\Users\\Admin\\source\\repos\\AddEditDemo\\AddEditDemo.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\repos\\AddEditDemo\\obj\\",
+      "projectPath": "C:\\Users\\mayur\\Source\\Repos\\NiceAdmin_AddressBook_GN\\AddEditDemo.csproj",
+      "packagesPath": "C:\\Users\\mayur\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mayur\\Source\\Repos\\NiceAdmin_AddressBook_GN\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mayur\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10284,7 +10284,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   },
