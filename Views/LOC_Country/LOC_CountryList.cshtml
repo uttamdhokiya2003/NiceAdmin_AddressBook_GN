@@ -4,7 +4,7 @@
 }
 
 @using System.Data;
-@model DataTable
+@model AddEditDemo.Models.EMP_EmployeeModel
 <div class="pagetitle">
     <div><h1>Country List</h1></div>
     <nav>
@@ -27,21 +27,7 @@
                         <div class="col-md-1"><form method="post" asp-controller="LOC_Country" asp-action="Add"><button type="submit" class="btn btn-success">Add</button></form></div>
                     </div>
                     <br />
-                    <div class="row">
-                        <div class="justify-content-evenly">
-                            <form method="post" asp-controller="LOC_Country" asp-action="Filter">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <input type="search" name="CountryName" class="form-control" placeholder="Enter Country Name">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <button type="submit" class="btn btn-dark mx-auto">Search</button>
-                                        <a class="btn btn-light" asp-controller="LOC_Country" asp-action="SelectAll">Clear Filter</a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    <partial name="_FilterCountry" />
                     <hr />
                     <!-- Table with stripped rows -->
                     <table class="table datatable text-center">
@@ -57,20 +43,20 @@
                             </tr>
                         </thead>
                         <tbody class="text-center">
-                            @foreach (DataRow dr in Model.Rows)
+                            @foreach (LOC_CountryModel dr in ViewBag.Country)
                             {
                                 <tr >
-                                    <td scope="row">@dr["CountryID"]</td>
-                                    <td scope="col">@dr["CountryName"]</td>
-                                    <td scope="col"><a asp-controller="LOC_State" asp-action="SelectAll" asp-route-CountryID="@(Convert.ToInt32(dr["CountryID"]))">@dr["StateCount"]</a></td>
-                                    <td scope="col"><a asp-controller="LOC_City" asp-action="SelectAll" asp-route-CountryID="@(Convert.ToInt32(dr["CountryID"]))">@dr["CityCount"]</a></td>
-                                    <td scope="col">@Convert.ToDateTime(@dr["Created"]).ToString("dd-MM-yyyy")</td>
-                                    <td scope="col">@Convert.ToDateTime(@dr["Modified"]).ToString("dd-MM-yyyy")</td>
+                                    <td scope="row">@dr.CountryID</td>
+                                    <td scope="col">@dr.CountryName</td>
+                                    <td scope="col"><a asp-controller="LOC_State" asp-action="SelectAll" asp-route-CountryID="@(Convert.ToInt32(dr.CountryID))">@dr.StateCount</a></td>
+                                    <td scope="col"><a asp-controller="LOC_City" asp-action="SelectAll" asp-route-CountryID="@(Convert.ToInt32(dr.CountryID))">@dr.CityCount</a></td>
+                                    <td scope="col">@Convert.ToDateTime(@dr.Created).ToString("dd-MM-yyyy")</td>
+                                    <td scope="col">@Convert.ToDateTime(@dr.Modified).ToString("dd-MM-yyyy")</td>
                                     <td scope="col">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <form method="post" asp-controller="LOC_Country" asp-action="Add" asp-route-Countryid="@(Convert.ToInt32(dr["CountryID"]))">
-                                                    <input type="hidden" name="CountryID" value="@Convert.ToInt32(dr["CountryID"])" />
+                                                <form method="post" asp-controller="LOC_Country" asp-action="Add" asp-route-Countryid="@(Convert.ToInt32(dr.CountryID))">
+                                                    <input type="hidden" name="CountryID" value="@Convert.ToInt32(dr.CountryID)" />
                                                     <button type="submit" class="btn btn-secondary ">
 
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
@@ -81,7 +67,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <form method="post" asp-controller="LOC_Country" asp-action="Delete">
-                                                    <input type="hidden" name="CountryID" value="@Convert.ToInt32(dr["CountryID"])" />
+                                                    <input type="hidden" name="CountryID" value="@Convert.ToInt32(dr.CountryID)" />
                                                     <button onclick="return fun1()" type="submit" class="btn btn-danger">
 
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">

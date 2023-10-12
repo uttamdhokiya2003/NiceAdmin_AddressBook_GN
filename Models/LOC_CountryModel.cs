@@ -6,6 +6,8 @@
         public string? CountryName { get; set; }
         public DateTime Created { get; set; }
         public DateTime Modified { get; set; }
+        public int StateCount { get; set; }
+        public int CityCount { get; set; }
     }
     public class Countrydropdown
     {

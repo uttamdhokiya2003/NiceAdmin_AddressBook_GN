@@ -2,6 +2,7 @@
 using AddEditDemo.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
+using System.Diagnostics.Metrics;
 
 namespace AddEditDemo.Controllers
 {
@@ -13,8 +14,20 @@ namespace AddEditDemo.Controllers
         public IActionResult SelectAll() 
         {
             DataTable dt=dalLOC.dbo_PR_LOC_Country_SelectAll();
-            List<LOC_CountryModel> 
-            return View("LOC_CountryList",dt);
+            List<LOC_CountryModel> Country = new List<LOC_CountryModel>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                LOC_CountryModel CountryModel = new LOC_CountryModel();
+                CountryModel.CountryID = Convert.ToInt32(dr["CountryID"]);
+                CountryModel.CountryName = dr["CountryName"].ToString();
+                CountryModel.StateCount = Convert.ToInt32(dr["StateCount"]);
+                CountryModel.CityCount = Convert.ToInt32(dr["CityCount"]);
+                CountryModel.Created = Convert.ToDateTime(dr["Created"]);
+                CountryModel.Modified = Convert.ToDateTime(dr["Modified"]);
+                Country.Add(CountryModel);
+            }
+            ViewBag.Country = Country;
+            return View("LOC_CountryList");
         }
         #endregion
 
@@ -80,7 +93,20 @@ namespace AddEditDemo.Controllers
         public IActionResult Filter(string CountryName)
         {
             DataTable dt = dalLOC.dbo_PR_LOC_Country_SelectByCountryName(CountryName);
-            return View("LOC_CountryList", dt);
+            List<LOC_CountryModel> Country = new List<LOC_CountryModel>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                LOC_CountryModel CountryModel = new LOC_CountryModel();
+                CountryModel.CountryID = Convert.ToInt32(dr["CountryID"]);
+                CountryModel.CountryName = dr["CountryName"].ToString();
+                CountryModel.StateCount = Convert.ToInt32(dr["StateCount"]);
+                CountryModel.CityCount = Convert.ToInt32(dr["CityCount"]);
+                CountryModel.Created = Convert.ToDateTime(dr["Created"]);
+                CountryModel.Modified = Convert.ToDateTime(dr["Modified"]);
+                Country.Add(CountryModel);
+            }
+            ViewBag.Country = Country;
+            return View("LOC_CountryList");
         }
         #endregion
     }

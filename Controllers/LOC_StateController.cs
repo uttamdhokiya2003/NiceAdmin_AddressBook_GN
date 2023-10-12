@@ -27,7 +27,18 @@ namespace AddEditDemo.Controllers
             #endregion
 
             DataTable dt = dalLOC.dbo_PR_LOC_State_SelectAll(modelLOC_State);
-            return View("LOC_StateList", dt);
+            List< LOC_StateModel> State = new List< LOC_StateModel>();    
+            foreach (DataRow dr in dt.Rows)
+            {
+                LOC_StateModel StateModel = new LOC_StateModel();
+                StateModel.StateID = Convert.ToInt32(dr["StateID"]);
+                StateModel.StateName = dr["StateName"].ToString();
+                StateModel.Created = Convert.ToDateTime(dr["Created"]);
+                StateModel.Modified = Convert.ToDateTime(dr["Modified"]);
+                State.Add(StateModel);
+            }
+            ViewBag.State = State;
+            return View("LOC_StateList");
         }
         #endregion
 

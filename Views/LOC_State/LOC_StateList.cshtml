@@ -4,7 +4,7 @@
 }
 
 @using System.Data;
-@model DataTable
+@model AddEditDemo.Models.LOC_StateModel
 <div class="pagetitle">
     <div><h1>State List</h1></div>
     <nav>
@@ -27,30 +27,7 @@
                         <div class="col-md-1"><form method="post" asp-controller="LOC_State" asp-action="Add"><button type="submit" class="btn btn-success">Add</button></form></div>
                     </div>
                     <br />
-                    <div class="row">
-                        <div class="justify-content-evenly">
-                            <form method="post">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <select class="form-control" name="CountryID" asp-items="@(new SelectList(ViewBag.CountryList,"CountryID","CountryName"))">
-                                            <option value="">Select Country</option>
-                                        </select>
-                                        
-
-                                        <span class="text-danger"></span>
-                                            @* <input type="search" name="CountryName" class="form-control" placeholder="Enter Country Name"> *@
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input type="search" name="StateName" class="form-control" placeholder="Enter State Name">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button type="submit" class="btn btn-dark mx-auto" asp-controller="LOC_State" asp-action="SelectAll">Search</button>
-                                        <a class="btn btn-light" asp-controller="LOC_State" asp-action="SelectAll">Clear Filter</a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    <partial name="_FilterState"/>
                     <hr />
                     <!-- Table with stripped rows -->
                     <table class="table datatable text-center">
@@ -65,19 +42,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (DataRow dr in Model.Rows)
+                            @foreach (LOC_StateModel dr in ViewBag.State)
                             {
                                 <tr>
-                                    <td scope="row">@dr["StateID"]</td>
-                                    <td scope="col">@dr["CountryName"]</td>
-                                    <td scope="col">@dr["StateName"]</td>
-                                    <td scope="col">@Convert.ToDateTime(@dr["Created"]).ToString("dd-MM-yyyy")</td>
-                                    <td scope="col">@Convert.ToDateTime(@dr["Modified"]).ToString("dd-MM-yyyy")</td>
+                                    <td scope="row">@dr.StateID</td>
+                                    <td scope="col">@dr.CountryName</td>
+                                    <td scope="col">@dr.StateName</td>
+                                    <td scope="col">@Convert.ToDateTime(@dr.Created).ToString("dd-MM-yyyy")</td>
+                                    <td scope="col">@Convert.ToDateTime(@dr.Modified).ToString("dd-MM-yyyy")</td>
                                     <td scope="col">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <form method="post" asp-controller="LOC_State" asp-action="Add" asp-route-Stateid="@(Convert.ToInt32(dr["StateID"]))">
-                                                    <input type="hidden" name="StateID" value="@Convert.ToInt32(dr["StateID"])" />
+                                                <form method="post" asp-controller="LOC_State" asp-action="Add" asp-route-Stateid="@(Convert.ToInt32(dr.StateID))">
+                                                    <input type="hidden" name="StateID" value="@Convert.ToInt32(dr.StateID)" />
                                                     <button type="submit" class="btn btn-secondary ">
 
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
@@ -88,7 +65,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <form method="post" asp-controller="LOC_State" asp-action="Delete">
-                                                    <input type="hidden" name="StateID" value="@Convert.ToInt32(dr["StateID"])" />
+                                                    <input type="hidden" name="StateID" value="@Convert.ToInt32(dr.StateID)" />
                                                     <button onclick="return fun1()" type="submit" class="btn btn-danger">
 
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
