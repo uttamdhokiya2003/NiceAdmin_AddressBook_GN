@@ -1,0 +1,224 @@
+﻿@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.Data;
+@model DataTable
+<div class="pagetitle">
+    <div><h1>Employee List</h1></div>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="EMP_Employee" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item">Employee List</li>
+        </ol>
+    </nav>
+
+</div><!-- End Page Title -->
+
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card responsive">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-11"><h3>Employee List</h3></div>
+                        <div class="col-md-1"><form method="post" asp-controller="EMP_Employee" asp-action="Add"><button type="submit" class="btn btn-success">Add</button></form></div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="justify-content-evenly">
+                            <form method="post" asp-controller="EMP_Employee" asp-action="Filter">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <input type="search" name="EmployeeName" class="form-control" placeholder="Enter Name">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select name="Gender" class="form-control">
+                                            <option value="">Please select one…</option>
+                                            <option value="female">Female</option>
+                                            <option value="male">Male</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <input type="search" name="Email" class="form-control" placeholder="Enter Email">
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="col-2">
+                                    <button type="submit" class="btn btn-dark mx-auto">Search</button>
+                                    <a class="btn btn-light" asp-controller="EMP_Employee" asp-action="SelectAll">Clear Filter</a>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <hr />
+                    <!-- Table with stripped rows -->
+                    <table class="table datatable table-responsive table-hover text-center" @* id="sample_1"*@ id="myTable" style="font-family:Bahnschrift;font-size:medium">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" class="form-check-input" id="SelectAll" name="SelectAll" /></th>
+
+                                <th scope="col">EmployeeID</th>
+                                <th scope="col">Employee Name</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Hobbies</th>
+                                <th scope="col">Mobile</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">JoningDate</th>
+                                <th scope="col">Salary</th>
+                                <th scope="col">Created</th>
+                                <th scope="col">Modified</th>
+                                <th scope="col" style="text-align: center;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (DataRow dr in Model.Rows)
+                            {
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input" id="SelectOne" name="SelectOne" value="@dr["EmployeeID"]" />
+                                    </td>
+                                    <td scope="row">@dr["EmployeeID"]</td>
+                                    <td scope="col">@dr["EmployeeName"]</td>
+                                    <td scope="col">@dr["Department"]</td>
+                                    <td scope="col">@dr["Address"]</td>
+                                    <td scope="col">@dr["Gender"]</td>
+                                    <td scope="col">@dr["Hobby"]</td>
+                                    <td scope="col">@dr["Mobile"]</td>
+                                    <td scope="col">@dr["Email"]</td>
+                                    <td scope="col">@Convert.ToDateTime(@dr["JoiningDate"]).ToString("dd-MM-yyyy")</td>
+                                    <td scope="col">@dr["Salary"]</td>
+                                    <td scope="col">@Convert.ToDateTime(@dr["Created"]).ToString("dd-MM-yyyy")</td>
+                                    <td scope="col">@Convert.ToDateTime(@dr["Modified"]).ToString("dd-MM-yyyy")</td>
+                                    <td scope="col">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <form method="post" asp-controller="EMP_Employee" asp-action="Add" asp-route-EmployeeID="@(Convert.ToInt32(dr["EmployeeID"]))">
+                                                    <input type="hidden" name="EmployeeID" value="@Convert.ToInt32(dr["EmployeeID"])" />
+                                                    <button type="submit" class="btn btn-secondary ">
+
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                                            <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                                                        </svg>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <form method="post" asp-controller="EMP_Employee" asp-action="Delete">
+                                                    <input type="hidden" name="EmployeeID" value="@Convert.ToInt32(dr["EmployeeID"])" />
+                                                    <button onclick="return fun1()" type="submit" class="btn btn-danger">
+
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+                                                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+                                                        </svg>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <!-- End Table with stripped rows -->
+                    <div class="text-end">
+                        <button class="btn btn-danger mb-5" id="hideButton">Delete Multiple</button>
+                        <button class="btn btn-danger mb-5" id="btnDelete">Delete Selected</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+
+    <script>
+        function fun1() {
+            if (confirm("Are You Sure You Want To Delete?")) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+
+    <script>
+        $('#SelectAll').on('click', function () {
+            let checkboxes = document.getElementsByTagName('input');
+            let val = null;
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].type === 'checkbox') {
+                    if (val == null) {
+                        val = checkboxes[i].checked;
+                    }
+                    else {
+                        checkboxes[i].checked = val;
+                    }
+                }
+            }
+        });
+
+        $('#btnDelete').on('click', function () {
+            debugger;
+            let val = [];
+            console.log(val);
+            $("input[name='SelectOne']:checked").each(function () {
+                val.push($(this).val());
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: '/EMP_Employee/DeleteMultiple',
+                data: { 'Ids': val },
+                success: function (response) {
+                    if (response == 'success') {
+                        location.reload();
+                    }
+                },
+                error: function () {
+
+                }
+            })
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#myTable").DataTable({
+                "ordering": true,
+                'columnDefs': [{
+                    'targets': [4, 5], /* column index */
+                    'orderable': false, /* true or false */
+                }]
+            });
+        });
+    </script>
+
+    <script>
+        // Get references to the table and button
+        const employeeTable = document.getElementById("myTable");
+        const toggleCheckboxesButton = document.getElementById("hideButton");
+
+        // Add a click event listener to the button
+        toggleCheckboxesButton.addEventListener("click", function () {
+            // Get all checkboxes in the table
+            const checkboxes = employeeTable.querySelectorAll("input[type='checkbox']");
+
+            // Toggle the display property of the checkboxes
+            checkboxes.forEach((checkbox) => {
+                checkbox.style.display = (checkbox.style.display === "none") ? "block" : "none";
+            });
+        });
+    </script>
+}

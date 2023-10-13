@@ -14,6 +14,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\EMP_Department\Controllers\" />
+    <Folder Include="Areas\EMP_Department\Data\" />
+    <Folder Include="Areas\EMP_Department\Models\" />
+    <Folder Include="Areas\EMP_Department\Views\" />
+    <Folder Include="Areas\EMP_Employee\Data\" />
+    <Folder Include="Areas\LOC_City\Controllers\" />
+    <Folder Include="Areas\LOC_City\Data\" />
+    <Folder Include="Areas\LOC_City\Models\" />
+    <Folder Include="Areas\LOC_City\Views\" />
+    <Folder Include="Areas\LOC_Country\Controllers\" />
+    <Folder Include="Areas\LOC_Country\Data\" />
+    <Folder Include="Areas\LOC_Country\Models\" />
+    <Folder Include="Areas\LOC_Country\Views\" />
+    <Folder Include="Areas\LOC_State\Controllers\" />
+    <Folder Include="Areas\LOC_State\Data\" />
+    <Folder Include="Areas\LOC_State\Models\" />
+    <Folder Include="Areas\LOC_State\Views\" />
     <Folder Include="wwwroot\DataTable\" />
   </ItemGroup>
 

@@ -1,4 +1,5 @@
-﻿using AddEditDemo.Models;
+﻿using AddEditDemo.Areas.EMP_Department.Models;
+using AddEditDemo.Areas.EMP_Employee.Models;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using OnlineMobileShopping.DAL;

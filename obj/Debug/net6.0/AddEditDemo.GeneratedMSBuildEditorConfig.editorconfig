@@ -16,6 +16,34 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\mayur\source\repos\NiceAdmin_AddressBook_GN
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Areas/EMP_Department/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRU1QX0RlcGFydG1lbnRcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Areas/EMP_Employee/Views/EMP_Employee/EMP_EmployeeAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRU1QX0VtcGxveWVlXFZpZXdzXEVNUF9FbXBsb3llZVxFTVBfRW1wbG95ZWVBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Areas/EMP_Employee/Views/EMP_Employee/EMP_EmployeeList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRU1QX0VtcGxveWVlXFZpZXdzXEVNUF9FbXBsb3llZVxFTVBfRW1wbG95ZWVMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Areas/EMP_Employee/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRU1QX0VtcGxveWVlXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Areas/LOC_City/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0NpdHlcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Areas/LOC_Country/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX0NvdW50cnlcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Areas/LOC_State/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX1N0YXRlXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Views/EMP_Department/EMP_DepartmentAddEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRU1QX0RlcGFydG1lbnRcRU1QX0RlcGFydG1lbnRBZGRFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -24,16 +52,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRU1QX0RlcGFydG1lbnRcRU1QX0RlcGFydG1lbnRMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Views/EMP_Employee/EMP_EmployeeAddEdit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRU1QX0VtcGxveWVlXEVNUF9FbXBsb3llZUFkZEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Views/EMP_Employee/EMP_EmployeeList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRU1QX0VtcGxveWVlXEVNUF9FbXBsb3llZUxpc3QuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Views/EMP_Employee/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRU1QX0VtcGxveWVlXEluZGV4LmNzaHRtbA==
+[C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Views/LOC_City/LOC_CityAddEdit.cshtml]

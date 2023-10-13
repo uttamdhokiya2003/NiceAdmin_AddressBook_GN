@@ -1,5 +1,5 @@
-﻿using AddEditDemo.DAL;
-using AddEditDemo.Models;
+﻿using AddEditDemo.Areas.EMP_Department.Models;
+using AddEditDemo.DAL;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 
