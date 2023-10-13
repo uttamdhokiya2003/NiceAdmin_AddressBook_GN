@@ -11,12 +11,13 @@ using System.Net.Sockets;
 using System.Net;
 using AddEditDemo.Areas.EMP_Employee.Models;
 using AddEditDemo.Areas.EMP_Department.Models;
+using AddEditDemo.Areas.LOC_Country.Models;
 
 namespace AddEditDemo.Areas.EMP_Employee.Controllers
 {
 
     [Area("Emp_Employee")]
-    [Route("[Controller]/[action]")]
+    [Route("Emp_Employee/[Controller]/[action]")]
     public class EMP_EmployeeController : Controller
     {
         EMP_DAL dalEMP = new EMP_DAL();
@@ -37,7 +38,27 @@ namespace AddEditDemo.Areas.EMP_Employee.Controllers
             //SqlDataReader objSDR = objCmd.ExecuteReader();
             //dt.Load(objSDR);
 
-            return View("EMP_EmployeeList", dt);
+            //List<EMP_EmployeeModel> Employee = new List<EMP_EmployeeModel>();
+            //foreach (DataRow dr in dt.Rows)
+            //{
+            //    EMP_EmployeeModel EmployeeModel = new EMP_EmployeeModel();
+            //    EmployeeModel.EmployeeID = Convert.ToInt32(dr["EmployeeID"]);
+            //    EmployeeModel.EmployeeName = dr["EmployeeName"].ToString();
+            //    EmployeeModel.Department = dr["Department"].ToString();
+            //    EmployeeModel.Address = dr["Address"].ToString();
+            //    EmployeeModel.Email = dr["Email"].ToString();
+            //    EmployeeModel.Mobile = dr["Mobile"].ToString();
+            //    EmployeeModel.Hobby.Hobby = dr["Hobby"].ToString();
+            //    EmployeeModel.Gender = dr["Gender"].ToString();
+            //    EmployeeModel.Salary = Convert.ToInt32(dr["Salary"]);
+            //    EmployeeModel.JoiningDate = Convert.ToDateTime(dr["JoiningDate"]);
+            //    EmployeeModel.Created = Convert.ToDateTime(dr["Created"]);
+            //    EmployeeModel.Modified = Convert.ToDateTime(dr["Modified"]);
+            //    Employee.Add(EmployeeModel);
+            //}
+            //ViewBag.Employee = Employee;
+
+            return View("EMP_EmployeeList",dt);
         }
         #endregion
 
@@ -52,7 +73,7 @@ namespace AddEditDemo.Areas.EMP_Employee.Controllers
         #endregion
 
         #region Add
-        public IActionResult Add(int? EmployeeID, EMP_EmployeeModel modelEmp_employee)
+        public IActionResult Add(int? EmployeeID)
         {
             #region Select For Department Dropdown
             DataTable dt1 = dalEMP.dbo_PR_EMP_Department_SelectByDropdown();
@@ -125,6 +146,7 @@ namespace AddEditDemo.Areas.EMP_Employee.Controllers
             ////ViewBag.HobbyList = List1;
 
             #endregion
+
             return View("EMP_EmployeeAddEdit");
         }
         #endregion
@@ -135,6 +157,23 @@ namespace AddEditDemo.Areas.EMP_Employee.Controllers
         {
             //if (modelEMP_Employee.EmployeeID == null)
             //{
+            #region Upload Starts here
+            if (modelEMP_Employee.File != null)
+            {
+                string FilePath = "wwwroot\\Upload";
+                string path = Path.Combine(Directory.GetCurrentDirectory(), FilePath);
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+                string fileNameWithPath = Path.Combine(path, modelEMP_Employee.File.FileName);
+                modelEMP_Employee.PhotoPath = FilePath.Replace("wwwroot\\", "/") + "/" + modelEMP_Employee.File.FileName;
+                using (var stream = new FileStream(fileNameWithPath, FileMode.Create))
+                {
+                    modelEMP_Employee.File.CopyTo(stream);
+                }
+            }
+            #endregion
 
             #region Insert
             //DataTable dt = dalEMP.dbo_PR_EMP_Employee_Insert(modelEMP_Employee);
@@ -143,6 +182,8 @@ namespace AddEditDemo.Areas.EMP_Employee.Controllers
                 if (Convert.ToBoolean(dalEMP.dbo_PR_EMP_Employee_Insert(modelEMP_Employee)))
                     if (Convert.ToBoolean(dalEMP.dbo_PR_EWH_EmployeeWiseHobby_Insert(modelEMP_Employee)))
                         TempData["EmployeeInsertMsg"] = "Record Inserted Successfully";
+                return RedirectToAction("Add");
+
             }
             #endregion
 
@@ -179,7 +220,28 @@ namespace AddEditDemo.Areas.EMP_Employee.Controllers
         public IActionResult Filter(string EmployeeName, string Gender, string Email)
         {
             DataTable dt = dalEMP.dbo_PR_EMP_Employee_SelectByPage(EmployeeName, Gender, Email);
-            return View("EMP_EmployeeList", dt);
+
+            //List<EMP_EmployeeModel> Employee = new List<EMP_EmployeeModel>();
+            //foreach (DataRow dr in dt.Rows)
+            //{
+            //    EMP_EmployeeModel EmployeeModel = new EMP_EmployeeModel();
+            //    EmployeeModel.EmployeeID = Convert.ToInt32(dr["EmployeeID"]);
+            //    EmployeeModel.EmployeeName = dr["EmployeeName"].ToString();
+            //    EmployeeModel.Department = dr["Department"].ToString();
+            //    EmployeeModel.Address = dr["Address"].ToString();
+            //    EmployeeModel.Email = dr["Email"].ToString();
+            //    EmployeeModel.Mobile = dr["Mobile"].ToString();
+            //    EmployeeModel.Hobby.Hobby = dr["Hobby"].ToString();
+            //    EmployeeModel.Gender = dr["Gender"].ToString();
+            //    EmployeeModel.Salary = Convert.ToInt32(dr["Salary"]);
+            //    EmployeeModel.JoiningDate = Convert.ToDateTime(dr["JoiningDate"]);
+            //    EmployeeModel.Created = Convert.ToDateTime(dr["Created"]);
+            //    EmployeeModel.Modified = Convert.ToDateTime(dr["Modified"]);
+            //    Employee.Add(EmployeeModel);
+            //}
+            //ViewBag.Employee = Employee;
+
+            return View("EMP_EmployeeList",dt);
         }
         #endregion
 

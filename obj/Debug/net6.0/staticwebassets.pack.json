@@ -1873,6 +1873,26 @@
       "PackagePath": "staticwebassets\\Theme\\assets\\vendor\\tinymce\\tinymce.min.js"
     },
     {
+      "Id": "C:\\Users\\mayur\\source\\repos\\NiceAdmin_AddressBook_GN\\wwwroot\\Upload\\BingImageOfTheDay.jpg",
+      "PackagePath": "staticwebassets\\Upload\\BingImageOfTheDay.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mayur\\source\\repos\\NiceAdmin_AddressBook_GN\\wwwroot\\Upload\\Screenshot (12).png",
+      "PackagePath": "staticwebassets\\Upload\\Screenshot (12).png"
+    },
+    {
+      "Id": "C:\\Users\\mayur\\source\\repos\\NiceAdmin_AddressBook_GN\\wwwroot\\Upload\\Screenshot (13).png",
+      "PackagePath": "staticwebassets\\Upload\\Screenshot (13).png"
+    },
+    {
+      "Id": "C:\\Users\\mayur\\source\\repos\\NiceAdmin_AddressBook_GN\\wwwroot\\Upload\\bajarang_bali.jpg",
+      "PackagePath": "staticwebassets\\Upload\\bajarang_bali.jpg"
+    },
+    {
+      "Id": "C:\\Users\\mayur\\source\\repos\\NiceAdmin_AddressBook_GN\\wwwroot\\Upload\\shree_hanuman_ji1.jpg",
+      "PackagePath": "staticwebassets\\Upload\\shree_hanuman_ji1.jpg"
+    },
+    {
       "Id": "C:\\Users\\mayur\\source\\repos\\NiceAdmin_AddressBook_GN\\wwwroot\\css\\DataTableCss\\jquery.dataTables.css",
       "PackagePath": "staticwebassets\\css\\DataTableCss\\jquery.dataTables.css"
     },

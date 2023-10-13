@@ -68,6 +68,7 @@ namespace AddEditDemo.DAL
                 DbCommand dbCMD = sqlDB.GetStoredProcCommand("dbo.PR_EMP_Employee_Insert");
                 sqlDB.AddOutParameter(dbCMD, "EmployeeID", SqlDbType.Int, 4);
                 sqlDB.AddInParameter(dbCMD, "EmployeeName", SqlDbType.NVarChar, modelEMP_Employee.EmployeeName);
+                sqlDB.AddInParameter(dbCMD, "PhotoPath", SqlDbType.NVarChar, modelEMP_Employee.PhotoPath);
                 sqlDB.AddInParameter(dbCMD,"DepID",SqlDbType.Int,modelEMP_Employee.DepID);
                 sqlDB.AddInParameter(dbCMD, "Address", SqlDbType.NVarChar, modelEMP_Employee.Address);
                 sqlDB.AddInParameter(dbCMD, "Gender", SqlDbType.NVarChar, modelEMP_Employee.Gender);
@@ -132,6 +133,7 @@ namespace AddEditDemo.DAL
                 DbCommand dbCMD = sqlDB.GetStoredProcCommand("dbo.PR_EMP_Employee_Update");
                 sqlDB.AddInParameter(dbCMD, "EmployeeID ", SqlDbType.Int, modelEMP_Employee.EmployeeID);
                 sqlDB.AddInParameter(dbCMD, "EmployeeName", SqlDbType.NVarChar, modelEMP_Employee.EmployeeName);
+                sqlDB.AddInParameter(dbCMD, "PhotoPath", SqlDbType.NVarChar, modelEMP_Employee.PhotoPath);
                 sqlDB.AddInParameter(dbCMD, "DepID", SqlDbType.Int, modelEMP_Employee.DepID);
                 sqlDB.AddInParameter(dbCMD, "Address", SqlDbType.NVarChar, modelEMP_Employee.Address);
                 sqlDB.AddInParameter(dbCMD, "Gender", SqlDbType.NVarChar, modelEMP_Employee.Gender);

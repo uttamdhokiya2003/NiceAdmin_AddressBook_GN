@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AddEditDemo.Models
+namespace AddEditDemo.Areas.EMP_Department.Models
 {
     public class EMP_DepartmentModel
     {

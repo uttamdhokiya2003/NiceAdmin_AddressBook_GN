@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using System.Data;
-    
+
 @model AddEditDemo.Areas.EMP_Employee.Models.EMP_EmployeeModel
 <div class="pagetitle">
     <div><h1>Employee Add Edit</h1></div>
@@ -24,23 +24,23 @@
 </div>
 <div class="row">
     <div class="col-lg-12">
-
         <div class="card">
             <div class="card-body">
-                <h3> EMP_Employee AddEdit</h3>
+                <br />
+                <h3>Employee AddEdit</h3>
 
                 <div class="container-fluid">
                     <h3>@TempData["EmployeeInsertMsg"]</h3>
-                    <form method="post" asp-controller="EMP_Employee" asp-action="Save">
+                    <form method="post" asp-area="EMP_Employee" asp-controller="EMP_Employee" asp-action="Save" enctype="multipart/form-data">
                         <div asp-validation-summary="All" class="text-danger"></div>
                         @Html.HiddenFor(x=>x.EmployeeID)
 
                         <div class="row-mb-3">
                             <div class="fw-bold"><label class="col-sm-2 col-form-label" asp-for="EmployeeName"><span class="text-danger fw-bold">*</span>Employee Name</label></div>
-                            <div class="col-sm-12"><input type="text" class="form-control" asp-for="EmployeeName"  /></div>
+                            <div class="col-sm-12"><input type="text" class="form-control" asp-for="EmployeeName" /></div>
                             <span class="text-danger" asp-validation-for="EmployeeName"></span>
                         </div>
-
+                        <br />
                         <div class="row-mb-3">
                             <div class="fw-bold"><label class="col-sm-2 col-form-label" asp-for="DepID"><span class="text-danger fw-bold">*</span>Department Name</label></div>
                             <select class="form-control" asp-for="DepID" asp-items="@(new SelectList(ViewBag.DepartmentList,"DepID","Department"))">
@@ -48,47 +48,35 @@
                             </select>
                             <span class="text-danger" asp-validation-for="DepID"></span>
                         </div>
-
+                        <br />
                         <div class="row mb-3">
                             <div class="fw-bold"><label class="col-sm-2 col-form-label" asp-for="Email"><span class="text-danger fw-bold">*</span>Employee Email</label></div>
-                            <div class="col-sm-12"><input type="email" class="form-control" asp-for="Email"  /></div>
+                            <div class="col-sm-12"><input type="email" class="form-control" asp-for="Email" /></div>
                             <span class="text-danger" asp-validation-for="Email"></span>
                         </div>
+
                         <div class="row mb-3">
                             <div class="fw-bold"><label class="col-sm-2 col-form-label" asp-for="Mobile"><span class="text-danger fw-bold">*</span>Mobile No.</label></div>
-                            <div class="col-sm-12"><input type="number" class="form-control" asp-for="Mobile"  /></div>
+                            <div class="col-sm-12"><input type="number" class="form-control" asp-for="Mobile" /></div>
                             <span class="text-danger" asp-validation-for="Mobile"></span>
                         </div>
 
                         <div class="row-mb-3">
-                            <div class="fw-bold"><label class="col-sm-2 col-form-label" asp-for="Hobby.HID"><span class="text-danger fw-bold">*</span>Hobbies</label></div>
+                            <div class="fw-bold"><label class="col-sm-2 col-form-label" asp-for="Hobby.HID"><span class="text-danger fw-bold">*</span>Hobby</label></div>
                             <select class="form-control" asp-for="Hobby.HID" asp-items="@(new SelectList(ViewBag.HobbyList,"HID","Hobby"))">
                                 <option value="">Select Hobby</option>
                             </select>
                             <span class="text-danger" asp-validation-for="Hobby.HID"></span>
-                        </div> 
-
-                       @*  <div class="row mb-3">
-                            <legend class="col-form-label col-sm-2 pt-0">Checkboxes</legend>
-                            <div class="col-sm-10">
-                                @foreach (var item in Model.Hobbylist)
-                                {
-                                    
-                                <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck1" asp-for="Hobby.HID">
-                                        <label class="form-check-label" for="gridCheck1" asp-items="@(new SelectList(ViewBag.HobbyList,"HID","Hobby"))">
-                                        
-                                    </label>
-                                </div>
-                                }
-
-                            </div>
-                        </div> *@
-
+                        </div>
+                        <div class="row-mb-3">
+                            <div class="fw-bold"><label class="col-sm-2 col-form-label" asp-for="File"><span class="text-danger fw-bold">*</span>Upload Photo</label></div>
+                            <input type="file" asp-for="File" placeholder="Upload your file" class="form-control" />
+                            <span class="text-danger" asp-validation-for="File"></span>
+                        </div>
                         <div class="row">
                             <div class="col-4">
                                 <div class="fw-bold"><label class="col-sm-6 col-form-label" asp-for="Salary"><span class="text-danger fw-bold">*</span>Salary</label></div>
-                                <div class="mt-2"><input type="number" class="form-control" asp-for="Salary"  /></div>
+                                <div class="mt-2"><input type="number" class="form-control" asp-for="Salary" /></div>
                                 <span class="text-danger" asp-validation-for="Salary"></span>
                             </div>
                             <div class="col-5">
@@ -101,7 +89,7 @@
                             </div>
                             <div class="col-3">
                                 <div class="fw-bold"><label class="col-sm-6 col-form-label" asp-for="JoiningDate"><span class="text-danger fw-bold">*</span>Joining Date</label></div>
-                                <div class="mt-2"><input type="date" class="form-control" asp-for="JoiningDate"  /></div>
+                                <div class="mt-2"><input type="date" class="form-control" asp-for="JoiningDate" /></div>
                                 <span class="text-danger" asp-validation-for="JoiningDate"></span>
                             </div>
                         </div>
@@ -113,15 +101,15 @@
                         <br /><hr />
                         <div class="text-left">
                             <button type="submit" class="btn btn-success" value="Submit">Submit</button>
-                            <a class="btn btn-secondary" asp-controller="EMP_Employee" asp-action="SelectAll">Back to List</a>
+                            <a class="btn btn-secondary" asp-area="EMP_Employee" asp-controller="EMP_Employee" asp-action="SelectAll">Back to List</a>
                         </div>
                     </form>
                 </div>
 
             </div>
         </div>
-
     </div>
+</div>
 
 
 </div>

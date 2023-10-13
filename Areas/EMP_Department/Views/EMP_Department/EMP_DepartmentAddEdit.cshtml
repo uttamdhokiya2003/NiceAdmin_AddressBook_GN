@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "EMP_DepartmentAddEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model AddEditDemo.Areas.EMP_Department.Models.EMP_DepartmentModel
+<div class="pagetitle">
+    <div><h1>Employee Add Edit</h1></div>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="EMP_Employee" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="EMP_Department" asp-action="SelectAll">Department</a></li>
+            <li class="breadcrumb-item">Department Add Edit</li>
+
+        </ol>
+    </nav>
+
+</div><!-- End Page Title -->
+
+<div class="container">
+    <div class="fs-2">
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+
+        <div class="card">
+            <div class="card-body">
+                <h3> EMP_Department AddEdit</h3>
+
+                <div asp-validation-summary="ModelOnly"></div>
+
+                <div class="container-fluid">
+                    <h3>@TempData["DepartmentInsertMsg"]</h3>
+                    <form method="post" asp-controller="EMP_Department" asp-action="Save">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        @Html.HiddenFor(x=>x.DepID)
+
+                        <div class="row-mb-3">
+                            <div class="fw-bold"><label class="col-sm-2 col-form-label" asp-for="Department"><span class="text-danger fw-bold">*</span>Department Name</label></div>
+                            <div class="col-sm-12"><input type="text" class="form-control" asp-for="Department" autocomplete="off" /></div>
+                            <span class="text-danger" asp-validation-for="Department"></span>
+                        </div>
+
+
+                        <br /><hr />
+                        <div class="text-left">
+                            <button type="submit" class="btn btn-success" value="Submit">Submit</button>
+                            <a class="btn btn-secondary" asp-controller="EMP_Department" asp-action="SelectAll">Back to List</a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

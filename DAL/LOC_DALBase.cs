@@ -1,4 +1,6 @@
-﻿using AddEditDemo.Models;
+﻿using AddEditDemo.Areas.LOC_City.Models;
+using AddEditDemo.Areas.LOC_Country.Models;
+using AddEditDemo.Areas.LOC_State.Models;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using OnlineMobileShopping.DAL;
 using System.Data;
