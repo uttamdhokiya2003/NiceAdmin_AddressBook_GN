@@ -10215,11 +10215,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mayur\\Source\\Repos\\NiceAdmin_AddressBook_GN\\AddEditDemo.csproj",
+      "projectUniqueName": "C:\\Users\\mayur\\source\\repos\\NiceAdmin_AddressBook_GN\\AddEditDemo.csproj",
       "projectName": "AddEditDemo",
-      "projectPath": "C:\\Users\\mayur\\Source\\Repos\\NiceAdmin_AddressBook_GN\\AddEditDemo.csproj",
+      "projectPath": "C:\\Users\\mayur\\source\\repos\\NiceAdmin_AddressBook_GN\\AddEditDemo.csproj",
       "packagesPath": "C:\\Users\\mayur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mayur\\Source\\Repos\\NiceAdmin_AddressBook_GN\\obj\\",
+      "outputPath": "C:\\Users\\mayur\\source\\repos\\NiceAdmin_AddressBook_GN\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mayur\\AppData\\Roaming\\NuGet\\NuGet.Config",
