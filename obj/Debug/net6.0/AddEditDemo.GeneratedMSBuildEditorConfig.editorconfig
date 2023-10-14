@@ -88,6 +88,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTE9DX1N0YXRlXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Areas/MST_Product/Views/MST_Product/MST_ProductAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTVNUX1Byb2R1Y3RcVmlld3NcTVNUX1Byb2R1Y3RcTVNUX1Byb2R1Y3RBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Areas/MST_Product/Views/MST_Product/MST_ProductEditMultiple.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTVNUX1Byb2R1Y3RcVmlld3NcTVNUX1Byb2R1Y3RcTVNUX1Byb2R1Y3RFZGl0TXVsdGlwbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Areas/MST_Product/Views/MST_Product/MST_ProductList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTVNUX1Byb2R1Y3RcVmlld3NcTVNUX1Byb2R1Y3RcTVNUX1Byb2R1Y3RMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Areas/MST_Product/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTVNUX1Byb2R1Y3RcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mayur/source/repos/NiceAdmin_AddressBook_GN/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

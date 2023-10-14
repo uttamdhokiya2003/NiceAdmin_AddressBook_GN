@@ -19,6 +19,7 @@
     <Folder Include="Areas\LOC_City\Data\" />
     <Folder Include="Areas\LOC_Country\Data\" />
     <Folder Include="Areas\LOC_State\Data\" />
+    <Folder Include="Areas\MST_Product\Data\" />
     <Folder Include="wwwroot\DataTable\" />
   </ItemGroup>
 

@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "MST_ProductAddEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.Data;
+
+@model AddEditDemo.Areas.MST_Product.Models.MST_ProductModel
+<div class="pagetitle">
+    <div><h1>Product Add Edit</h1></div>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="EMP_Employee" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item"><a asp-controller="MST_Product" asp-action="Index">Product</a></li>
+            <li class="breadcrumb-item">Product Add Edit</li>
+
+        </ol>
+    </nav>
+
+</div><!-- End Page Title -->
+
+<div class="container">
+    <div class="fs-2">
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <br />
+                <h3>Product AddEdit</h3>
+
+                <div class="container-fluid">
+                    <h3>@TempData["ProductInsertMsg"]</h3>
+                    <form method="post" asp-area="MST_Product" asp-controller="MST_Product" asp-action="Insert" enctype="multipart/form-data">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        @Html.HiddenFor(x=>x.ProductID)
+
+                        <div class="row-mb-3">
+                            <div class="fw-bold"><label class="col-sm-2 col-form-label" asp-for="ProductName"><span class="text-danger fw-bold">*</span>Product Name</label></div>
+                            <div class="col-sm-12"><input type="text" class="form-control" asp-for="ProductName" /></div>
+                            <span class="text-danger" asp-validation-for="ProductName"></span>
+                        </div>
+                        <br />
+
+                        <br />
+                        <div class="row mb-3">
+                            <div class="fw-bold"><label class="col-sm-2 col-form-label" asp-for="Description"><span class="text-danger fw-bold">*</span>Product Description</label></div>
+                            <div class="col-sm-12"><input type="text" class="form-control" asp-for="Description" /></div>
+                            <span class="text-danger" asp-validation-for="Description"></span>
+                        </div>
+
+
+                        <br /><hr />
+                        <div class="text-left">
+                            <button type="submit" class="btn btn-success" value="Submit">Submit</button>
+                            <a class="btn btn-secondary" asp-area="MST_Product" asp-controller="MST_Product" asp-action="Index">Back to List</a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
