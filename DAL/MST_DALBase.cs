@@ -106,31 +106,9 @@ namespace AddEditDemo.DAL
                 DbCommand dbCMD = sqlDB.GetStoredProcCommand("dbo.PR_MST_Product_Insert");
                 sqlDB.AddInParameter(dbCMD, "ProductName", SqlDbType.NVarChar, modelMST_ProductModel.ProductName);
                 sqlDB.AddInParameter(dbCMD, "Description", SqlDbType.NVarChar, modelMST_ProductModel.Description);
+                sqlDB.AddInParameter(dbCMD, "HID", SqlDbType.Int, modelMST_ProductModel.HID);
 
                 int vResultvalue = sqlDB.ExecuteNonQuery(dbCMD);
-                return (vResultvalue == -1 ? false : true);
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-
-        }
-        #endregion
-
-        #region dbo.PR_MST_Product_UpdateByPK
-        public bool? dbo_PR_MST_Product_UpdateByPK(MST_ProductModel modelMST_Product)
-        {
-            try
-            {
-                SqlDatabase sqlDB = new SqlDatabase(ConnectionStr);
-                DbCommand dbCMD = sqlDB.GetStoredProcCommand("dbo.PR_MST_Product_UpdateByPK");
-                sqlDB.AddInParameter(dbCMD, "ProductID ", SqlDbType.Int, modelMST_Product.ProductID);
-                sqlDB.AddInParameter(dbCMD, "ProductName", SqlDbType.NVarChar, modelMST_Product.ProductName);
-                sqlDB.AddInParameter(dbCMD, "Description", SqlDbType.NVarChar, modelMST_Product.Description);
-
-                int vResultvalue = sqlDB.ExecuteNonQuery(dbCMD);
-
                 return (vResultvalue == -1 ? false : true);
             }
             catch (Exception ex)
@@ -180,6 +158,30 @@ namespace AddEditDemo.DAL
                     dt.Load(dr);
                 }
                 return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+        #endregion
+
+        #region dbo.PR_MST_Product_UpdateByPK
+        public bool? dbo_PR_MST_Product_UpdateByPK(MST_ProductModel modelMST_ProductModel)
+        {
+            try
+            {
+                SqlDatabase sqlDB = new SqlDatabase(ConnectionStr);
+                DbCommand dbCMD = sqlDB.GetStoredProcCommand("dbo.PR_MST_Product_UpdateByPK");
+                sqlDB.AddInParameter(dbCMD, "ProductID ", SqlDbType.Int, modelMST_ProductModel.ProductID);
+                sqlDB.AddInParameter(dbCMD, "ProductName", SqlDbType.NVarChar, modelMST_ProductModel.ProductName);
+                sqlDB.AddInParameter(dbCMD, "Description", SqlDbType.NVarChar, modelMST_ProductModel.Description);
+                sqlDB.AddInParameter(dbCMD, "HID", SqlDbType.Int, modelMST_ProductModel.HID);
+
+                int vResultvalue = sqlDB.ExecuteNonQuery(dbCMD);
+
+                return (vResultvalue == -1 ? false : true);
             }
             catch (Exception ex)
             {

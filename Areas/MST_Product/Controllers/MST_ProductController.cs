@@ -12,6 +12,7 @@ using AddEditDemo.Areas.MST_Product.Models;
 using AddEditDemo.Areas.LOC_Country.Models;
 using AddEditDemo.Areas.LOC_State.Models;
 using AddEditDemo.Areas.EMP_Employee.Models;
+using AddEditDemo.Models;
 
 namespace AddEditDemo.Areas.MST_Product.Controllers
 {
@@ -20,6 +21,7 @@ namespace AddEditDemo.Areas.MST_Product.Controllers
     public class MST_ProductController : Controller
     {
         MST_DAL dalMST = new MST_DAL();
+        EMP_DAL dalEMP = new EMP_DAL();
 
         #region Index
         public IActionResult Index()
@@ -30,9 +32,27 @@ namespace AddEditDemo.Areas.MST_Product.Controllers
         }
         #endregion
 
+        #region HobbyDropdown
+        
+        public void SetHobbyDropDownList()
+        {
+            DataTable dt2 = dalEMP.dbo_PR_HOB_Hobby_SelectCheckbox();
+            List<HOB_HobbyDropdownModel> List2 = new List<HOB_HobbyDropdownModel>();
+            foreach (DataRow dr2 in dt2.Rows)
+            {
+                HOB_HobbyDropdownModel vlst2 = new HOB_HobbyDropdownModel();
+                vlst2.HID = Convert.ToInt32(dr2["HID"]);
+                vlst2.Hobby = dr2["Hobby"].ToString();
+                List2.Add(vlst2);
+            }
+            ViewBag.HobbyList = List2;
+        }
+        #endregion
+
         #region Add
         public IActionResult Add(int? ProductID)
         {
+            SetHobbyDropDownList();
             if (ProductID != null)
             {
                 DataTable dt = dalMST.dbo_PR_MST_Product_SelectByPK(ProductID);
@@ -42,6 +62,7 @@ namespace AddEditDemo.Areas.MST_Product.Controllers
                 foreach (DataRow dr in dt.Rows)
                 {
                     modelMST_Product.ProductID = Convert.ToInt32(dr["ProductID"]);
+                    modelMST_Product.HID = Convert.ToInt32(dr["HID"]);
                     modelMST_Product.ProductName = dr["ProductName"].ToString();
                     modelMST_Product.Description = dr["Description"].ToString();
 
@@ -90,7 +111,7 @@ namespace AddEditDemo.Areas.MST_Product.Controllers
         public IActionResult EditMultiple()
         {
             List<MST_ProductModel> products = new List<MST_ProductModel>();
-
+            SetHobbyDropDownList();
             DataTable dt = dalMST.dbo_PR_MST_Product_SelectAll();
 
             foreach (DataRow dr in dt.Rows)
@@ -99,7 +120,8 @@ namespace AddEditDemo.Areas.MST_Product.Controllers
                 {
                     ProductID = Convert.ToInt32(dr["ProductID"]),
                     ProductName = dr["ProductName"].ToString(),
-                    Description = dr["Description"].ToString()
+                    HID = Convert.ToInt32(dr["HID"]),
+                    Description = dr["Description"].ToString(),
                 });
 
             }
