@@ -32,7 +32,7 @@
                         <input type="text" class="form-control" name="products[@i].Description" value="@Model[i].Description" />
                     </td>
                     <td>
-                        @* <input type="hidden" class="form-control" name="products[@i].HID" value="@Model[i].HID" />  *@
+                        <input type="hidden" class="form-control" name="products[@i].HID" value="@Model[i].HID" />  
                         <select class="form-control" name="products[@i].HID" asp-items="@(new SelectList(ViewBag.HobbyList,"Value","Text",Model[i].Hobby))">
                             <option value="">Select Hobby</option>
                         </select>

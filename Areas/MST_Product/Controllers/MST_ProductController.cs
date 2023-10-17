@@ -105,13 +105,29 @@ namespace AddEditDemo.Areas.MST_Product.Controllers
                 vlst2.Hobby = dr2["Hobby"].ToString();
                 List2.Add(vlst2);
             }
+
+            ViewBag.HobbyList = List2;
+        }
+        #endregion
+        #region SetHobbyDropDownEditManyList
+        public void SetHobbyDropDownEditManyList()
+        {
+            DataTable dt2 = dalEMP.dbo_PR_HOB_Hobby_SelectCheckbox();
+            List<HOB_HobbyDropdownModel> List2 = new List<HOB_HobbyDropdownModel>();
+            foreach (DataRow dr2 in dt2.Rows)
+            {
+                HOB_HobbyDropdownModel vlst2 = new HOB_HobbyDropdownModel();
+                vlst2.HID = Convert.ToInt32(dr2["HID"]);
+                vlst2.Hobby = dr2["Hobby"].ToString();
+                List2.Add(vlst2);
+            }
             var Hobbies = new List<SelectListItem>();
-            foreach(var Hobbylist in List2)
+            foreach (var Hobbylist in List2)
             {
                 Hobbies.Add(new SelectListItem
                 {
-                    Value= Hobbylist.Hobby,
-                    Text=Hobbylist.Hobby
+                    Value = Hobbylist.Hobby,
+                    Text = Hobbylist.Hobby
                 });
             }
             ViewBag.HobbyList = Hobbies;
@@ -134,10 +150,10 @@ namespace AddEditDemo.Areas.MST_Product.Controllers
                     Hobby = dr["Hobby"].ToString(),
                     Description = dr["Description"].ToString(),
                     IsActive = dr["IsActive"].ToString()
-                }) ;
+                });
             }
 
-            SetHobbyDropDownList();
+            SetHobbyDropDownEditManyList();
 
             return View("MST_ProductEditMultiple", products);
         }
@@ -147,17 +163,17 @@ namespace AddEditDemo.Areas.MST_Product.Controllers
         [HttpPost]
         public IActionResult Edit(List<MST_ProductModel> products)
         {
-           
-            
-                foreach (var product in products)
+
+
+            foreach (var product in products)
+            {
+                if (Convert.ToBoolean(dalMST.dbo_PR_MST_Product_UpdateByPK(product)))
                 {
-                    if (Convert.ToBoolean(dalMST.dbo_PR_MST_Product_UpdateByPK(product)))
-                    {
-                        TempData["success"] = "Record Updated successfully.";
-                    }
+                    TempData["success"] = "Record Updated successfully.";
                 }
-                return RedirectToAction("Index");
-            
+            }
+            return RedirectToAction("Index");
+
             return View(products);
         }
         #endregion

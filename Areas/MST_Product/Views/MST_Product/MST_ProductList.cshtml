@@ -8,7 +8,7 @@
     <div><h1>Product List</h1></div>
     <nav>
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a asp-controller="EMP_Employee" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item"><a  asp-controller="Home" asp-action="Index">Home</a></li>
             <li class="breadcrumb-item">Product List</li>
 
         </ol>
@@ -65,7 +65,7 @@
                                         @dr["Description"].ToString()
                                     </td>
                                     <td>@dr["Hobby"].ToString()</td>
-                                    <td>@dr["IsActive"].ToString()</td>
+                                        <td>@dr["IsActive"].ToString()</td>
                                     <td scope="col">
                                         <div class="row">
                                             <div class="col-sm-6">
