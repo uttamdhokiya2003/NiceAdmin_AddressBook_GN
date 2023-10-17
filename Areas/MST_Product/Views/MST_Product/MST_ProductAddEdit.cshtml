@@ -56,7 +56,16 @@
                             </select>
                             <span class="text-danger" asp-validation-for="HID"></span>
                         </div>
-                        <br /><hr />
+                        <br/>
+                        <div class="col-mb-3">
+                            <div class="fw-bold"><span class="text-danger fw-bold">*</span>IsActive</span></div>
+                            <div class="mt-2">
+                                <span class="m-3"><input type="radio" value="Yes" asp-for="IsActive" /> Yes</span>
+                                <span class="m-3"><input type="radio" value="No" asp-for="IsActive" /> No</span>
+                            </div>
+                            <span class="text-danger" asp-validation-for="IsActive"></span>
+                        </div>
+                        <hr />
                         <div class="text-left">
                             <button type="submit" class="btn btn-success" value="Submit">Submit</button>
                             <a class="btn btn-secondary" asp-area="MST_Product" asp-controller="MST_Product" asp-action="Index">Back to List</a>

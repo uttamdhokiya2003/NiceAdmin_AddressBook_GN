@@ -17,6 +17,7 @@
                 <th>Product Name</th>
                 <th>Product Description</th>
                 <th>Hobby </th>
+                <th>isActive </th>
             </tr>
         </thead>
         <tbody>
@@ -30,12 +31,24 @@
                     <td>
                         <input type="text" class="form-control" name="products[@i].Description" value="@Model[i].Description" />
                     </td>
-                    <td>                            
-                        @* <input type="hidden" class="form-control" name="products[@i].HID" value="@Model[i].HID" /> *@
-                        <select class="form-control                                                                                                                      name="products[@i].HID" value="@Model[i].HID" asp-items="@(new SelectList(ViewBag.HobbyList,"HID","Hobby"))">
+                    <td>
+                        @* <input type="hidden" class="form-control" name="products[@i].HID" value="@Model[i].HID" />  *@
+                        <select class="form-control" name="products[@i].HID" asp-items="@(new SelectList(ViewBag.HobbyList,"Value","Text",Model[i].Hobby))">
                             <option value="">Select Hobby</option>
                         </select>
                     </td>
+                    @* <td>
+                        <span class="m-3"><input type="radio" value="Yes" name="products[@i].IsActive" value="Yes" @(Model[i].IsActive == "Yes"?"checked":"" )/>Yes</span>
+                        <span class="m-3"><input type="radio" value="No" name="products[@i].IsActive" value="No" @(Model[i].IsActive == "No"? "checked" :"") />No</span>
+                    </td> *@
+                    <td>
+                        <span class="m-3">
+                            <input type="radio" name="products[@i].IsActive" value="Yes" @(Model[i].IsActive == "Yes" ? "checked" : "") /> Yes
+                        </span>
+                        <span class="m-3">
+                            <input type="radio" name="products[@i].IsActive" value="No" @(Model[i].IsActive == "No" ? "checked" : "") /> No
+                        </span>
+                    </td>   
                 </tr>
             }
         </tbody>

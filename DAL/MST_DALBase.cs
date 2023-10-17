@@ -104,9 +104,11 @@ namespace AddEditDemo.DAL
             {
                 SqlDatabase sqlDB = new SqlDatabase(ConnectionStr);
                 DbCommand dbCMD = sqlDB.GetStoredProcCommand("dbo.PR_MST_Product_Insert");
+                sqlDB.AddInParameter(dbCMD, "HID", SqlDbType.Int, modelMST_ProductModel.HID);
                 sqlDB.AddInParameter(dbCMD, "ProductName", SqlDbType.NVarChar, modelMST_ProductModel.ProductName);
                 sqlDB.AddInParameter(dbCMD, "Description", SqlDbType.NVarChar, modelMST_ProductModel.Description);
-                sqlDB.AddInParameter(dbCMD, "HID", SqlDbType.Int, modelMST_ProductModel.HID);
+                sqlDB.AddInParameter(dbCMD, "IsActive", SqlDbType.NVarChar, modelMST_ProductModel.IsActive);
+
 
                 int vResultvalue = sqlDB.ExecuteNonQuery(dbCMD);
                 return (vResultvalue == -1 ? false : true);
@@ -174,10 +176,11 @@ namespace AddEditDemo.DAL
             {
                 SqlDatabase sqlDB = new SqlDatabase(ConnectionStr);
                 DbCommand dbCMD = sqlDB.GetStoredProcCommand("dbo.PR_MST_Product_UpdateByPK");
+                sqlDB.AddInParameter(dbCMD, "HID", SqlDbType.Int, modelMST_ProductModel.HID);
                 sqlDB.AddInParameter(dbCMD, "ProductID ", SqlDbType.Int, modelMST_ProductModel.ProductID);
                 sqlDB.AddInParameter(dbCMD, "ProductName", SqlDbType.NVarChar, modelMST_ProductModel.ProductName);
                 sqlDB.AddInParameter(dbCMD, "Description", SqlDbType.NVarChar, modelMST_ProductModel.Description);
-                sqlDB.AddInParameter(dbCMD, "HID", SqlDbType.Int, modelMST_ProductModel.HID);
+                sqlDB.AddInParameter(dbCMD, "IsActive", SqlDbType.NVarChar, modelMST_ProductModel.IsActive);
 
                 int vResultvalue = sqlDB.ExecuteNonQuery(dbCMD);
 
