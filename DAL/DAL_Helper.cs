@@ -1,4 +1,4 @@
-﻿namespace OnlineMobileShopping.DAL
+﻿namespace AddEditDemo.DAL
 {
     public class DAL_Helper
     {

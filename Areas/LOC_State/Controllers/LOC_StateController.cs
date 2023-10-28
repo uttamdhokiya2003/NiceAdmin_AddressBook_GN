@@ -36,6 +36,7 @@ namespace AddEditDemo.Areas.LOC_State.Controllers
                 LOC_StateModel StateModel = new LOC_StateModel();
                 StateModel.StateID = Convert.ToInt32(dr["StateID"]);
                 StateModel.StateName = dr["StateName"].ToString();
+                StateModel.CountryName = dr["CountryName"].ToString();
                 StateModel.Created = Convert.ToDateTime(dr["Created"]);
                 StateModel.Modified = Convert.ToDateTime(dr["Modified"]);
                 State.Add(StateModel);

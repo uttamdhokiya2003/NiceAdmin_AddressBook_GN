@@ -1,7 +1,7 @@
 ﻿using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using System.Data.Common;
 using System.Data;
-using OnlineMobileShopping.DAL;
+using AddEditDemo.DAL;
 using AddEditDemo.Areas.EMP_Employee.Models;
 using AddEditDemo.Areas.MST_Product.Models;
 

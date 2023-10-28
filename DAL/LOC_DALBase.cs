@@ -2,7 +2,7 @@
 using AddEditDemo.Areas.LOC_Country.Models;
 using AddEditDemo.Areas.LOC_State.Models;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
-using OnlineMobileShopping.DAL;
+using AddEditDemo.DAL;
 using System.Data;
 using System.Data.Common;
 using System.Runtime.Intrinsics.Arm;
